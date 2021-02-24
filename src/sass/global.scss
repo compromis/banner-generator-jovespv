@@ -1,0 +1,11 @@
+@import "variables";
+@import "fonts";
+@import "animations";
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+@import "pane";
+@import "easteregg";
+
+html {
+  font-size: 14px;
+}

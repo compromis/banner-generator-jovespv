@@ -1,0 +1,139 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Typography
+$family-primary: 'Compromis', sans-serif;
+
+// Colors
+$primary: #ff6600;
+$primary-invert: findColorInvert($primary);
+
+$gray-darkest: #353949;
+$gray-lightest: #f8faff;
+
+$gray-100: mix($gray-darkest, $gray-lightest, 5%);
+$gray-200: mix($gray-darkest, $gray-lightest, 10%);
+$gray-300: mix($gray-darkest, $gray-lightest, 20%);
+$gray-400: mix($gray-darkest, $gray-lightest, 30%);
+$gray-500: mix($gray-darkest, $gray-lightest, 40%);
+$gray-600: mix($gray-darkest, $gray-lightest, 50%);
+$gray-700: mix($gray-darkest, $gray-lightest, 70%);
+$gray-800:  mix($gray-darkest, $gray-lightest, 90%);
+$gray-900: $gray-darkest;
+
+$black-bis: $gray-900;
+$black-ter: $gray-800;
+$grey-darker: $gray-700;
+$grey-dark: $gray-600;
+$grey: $gray-500;
+$grey-light: $gray-400;
+$grey-lighter: $gray-300;
+$white-ter: $gray-200;
+$white-bis: $gray-100;
+
+// Setup $colors to use as bulma classes
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert),
+);
+
+//Background
+$body-background-color: $gray-lightest;
+$text: $gray-darkest;
+
+// Navbar
+$navbar-height: 3.25rem;
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+// Inputs
+$input-shadow: 0;
+
+// Banners
+$gradient-start: #d23517;
+$gradient-end: #f39128;
+$gradient: linear-gradient(var(--gradient-orientation, 45deg), $gradient-start, $gradient-end);
+$gradient-feminista: linear-gradient(var(--gradient-orientation, 45deg), #7D3A81, #C54687);
+$gradient-green: linear-gradient(var(--gradient-orientation, 45deg), #38B34A, #8CC949);
+$gradient-red: linear-gradient(var(--gradient-orientation, 45deg), #a70b12, #e00e18);
+$gradient-lgtb: linear-gradient(var(--gradient-orientation, 180deg),
+    rgba(239,64,77,1) 0%,
+    rgba(239,64,77,1) 16.6%,
+    rgba(247,146,38,1) 16.6%,
+    rgba(247,146,38,1) 33.2%,
+    rgba(255,209,15,1) 33.2%,
+    rgba(255,209,15,1) 49.8%,
+    rgba(127,195,71,1) 49.8%,
+    rgba(127,195,71,1) 66.4%,
+    rgba(85,164,219,1) 66.4%,
+    rgba(85,164,219,1) 83%,
+    rgba(161,74,156,1) 83%,
+    rgba(161,74,156,1) 100%);
+  $gradient-quatri: linear-gradient(90deg,
+    rgba(252,221,9,1) 0%,
+    rgba(252,221,9,1) 11.1%,
+    rgba(218,18,26,1) 11.1%,
+    rgba(218,18,26,1) 22.2%,
+    rgba(252,221,9,1) 22.2%,
+    rgba(252,221,9,1) 33.3%,
+    rgba(218,18,26,1) 33.3%,
+    rgba(218,18,26,1) 44.4%,
+    rgba(252,221,9,1) 44.4%,
+    rgba(252,221,9,1) 55.5%,
+    rgba(218,18,26,1) 55.5%,
+    rgba(218,18,26,1) 66.6%,
+    rgba(252,221,9,1) 66.6%,
+    rgba(252,221,9,1) 77.7%,
+    rgba(218,18,26,1) 77.7%,
+    rgba(218,18,26,1) 88.8%,
+    rgba(252,221,9,1) 88.8%,
+    rgba(252,221,9,1) 100%); 
+$fake-color: $gradient-start;
+$rotation: -5deg;
+$border-radius: 5rem;
+$card-radius: 1rem;
+
+// Shadows
+$default-shadow: 0 .8rem 1.7rem -.3rem var(--shadow-color, rgba($gray-900, .15)),
+    0 .5rem 1rem -.5rem var(--shadow-color, rgba($gray-900, .2)),
+    0 -.4rem 1rem -.4rem var(--shadow-color, rgba($gray-900, .015));
+$raised-shadow: 0 1.25rem 2.1rem -.3rem var(--shadow-color, rgba($gray-900, .15)),
+    0 .9rem 1.4rem -.5rem var(--shadow-color, rgba($gray-900, .2)),
+    0 -.75rem 1.4rem -.4rem var(--shadow-color, rgba($gray-900, .015));
+
+// Breakpoints
+$xs-breakpoint: 750px;
+$xl-breakpoint: 1400px;
+
+@mixin scrollbar {
+    &::-webkit-scrollbar {
+        width: 1rem;
+        background-color: $white !important;
+    }
+
+    &::-webkit-scrollbar-track {
+        width: 1rem;
+        background-color: $white !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $gray-400 !important;
+        border-radius: 4rem;
+        transition: .25s ease-in-out;
+        border: .25rem $white solid;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: $gray-600 !important;
+    }
+}
