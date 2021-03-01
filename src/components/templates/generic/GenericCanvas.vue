@@ -49,7 +49,7 @@
     <div class="logo" v-if="banner.name && aspect == '916'" style="bottom: 55px; left: 55px; width: 300px;" >
       <TextColectiu class="nomcolectiu" :mono="false" :logoStyle="banner.name" style="height: 80px;"></TextColectiu>
     </div>
-    <div class="hashtag" v-if="aspect === '11'">
+    <div class="hashtag">
       {{ banner.hashtag }}
     </div>
   </div>
@@ -220,12 +220,12 @@ export default {
       bottom: 80px;
     }
 
-    .hashtag {
-    color: $orange;
-    bottom: 105px;
+  .hashtag {
+    top: 414px;
     width: 245px;
-    left: 83px;
+    left: 122px;
     text-align: center;
+    font-size: 16px;
   }
   }
 </style>

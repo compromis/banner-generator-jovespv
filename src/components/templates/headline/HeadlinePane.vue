@@ -113,7 +113,7 @@
           placeholder="#"
           @input="updateHashtag"
           :value="properties.hashtag"
-          :maxlength="properties.hasLocalLabel ? 18 : 32">
+          :maxlength="properties.hasLocalLabel ? 18 : 25">
         </b-input>
       </b-field>
     </transition>

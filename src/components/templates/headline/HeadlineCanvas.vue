@@ -19,7 +19,7 @@
       <div class="headline-text"
         :style="{
           fontFamily: banner.source ? banner.source.fontFamily : false,
-          fontSize: aspect === '11' ? fontSize(banner.headline, 50, 30, 160) : fontSize(banner.headline, 35, 23.5, 160),
+          fontSize: aspect === '11' ? fontSize(banner.headline, 50, 27, 160) : fontSize(banner.headline, 35, 21, 160),
           letterSpacing: banner.source ? banner.source['letterSpacing'] : false
         }">
         {{ banner.headline | formatString }}
@@ -170,6 +170,7 @@ export default {
   #blob-2normal {
     background: radial-gradient(at 500px 150px, rgba(232,93,15,0.6) 0%, rgba(232,93,15,0) 65%);
   }
+
   #blob-2feminista{
     background: radial-gradient(at 500px 150px, rgba(109,35,127,1) 0%, rgba(109,35,127,0) 65%);
   }
@@ -183,9 +184,27 @@ export default {
   }
 
   #blob-2lgtb{
-    background: none;
-
+    border-radius: 0;
+    bottom: 0;
+    right: 0;
+    opacity: .6;
+    width: 720px;
+    height: 85px;
+    background: linear-gradient(90deg,
+      rgba(239,64,77,1) 0%,
+      rgba(239,64,77,1) 16.6%,
+      rgba(247,146,38,1) 16.6%,
+      rgba(247,146,38,1) 33.2%,
+      rgba(255,209,15,1) 33.2%,
+      rgba(255,209,15,1) 49.8%,
+      rgba(127,195,71,1) 49.8%,
+      rgba(127,195,71,1) 66.4%,
+      rgba(85,164,219,1) 66.4%,
+      rgba(85,164,219,1) 83%,
+      rgba(161,74,156,1) 83%,
+      rgba(161,74,156,1) 100%);
   }
+
   .hashtag {
     position: absolute;
     z-index: 30;
@@ -234,6 +253,7 @@ export default {
       left: 13px;
       z-index: 30;
       width: 300px;
+      margin-top: 80px;
       padding: 10px 40px;
       font-family: 'Tiempos Headline', serif;
       font-weight: 700;
@@ -242,11 +262,18 @@ export default {
       align-items: center;
 
       &-source {
-        width: 65px;
+          position: absolute;
+          top: 167px;
 
         &--custom {
           margin-bottom: 4px;
           font-size: 22px;
+        }
+
+        img {
+          width: 65px;
+          height: 20px;
+          object-fit: contain;
         }
       }
 
@@ -254,7 +281,7 @@ export default {
         font-size: 23px;
         line-height: 1.1;
         word-wrap: break-word;
-        height: 155px;
+        height: auto;
         text-align: center;
         overflow: hidden;
 
@@ -275,7 +302,7 @@ export default {
 
       .marc {
         width: 85%;
-        top: -155px;
+        top: -68px;
         left: 38px;
       }
 
@@ -285,7 +312,7 @@ export default {
           background: $white;
           transform: rotate(0);
           width: 90%;
-          top: -528px;
+          top: -440px;
           left: 20px;
           border-radius: 3rem;
         }

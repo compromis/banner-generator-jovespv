@@ -150,7 +150,6 @@ export default {
   .logo {
     color: $white;
     z-index: 20;
-    left: 35px;
 
     &-local-label {
       color: $white;
@@ -163,8 +162,7 @@ export default {
   }
 
   .hashtag {
-    color: $orange;
-    bottom: 60px;
+    color: $gray-900;
     left: 40px;
     width: 245px;
     text-align: left;
@@ -178,56 +176,53 @@ export default {
 
   // Story aspect
   .aspect-916 {
-  .text {
-    display: flex;
-    position: absolute;
-    top: 200px;
-    bottom: 300px;
-    left: 60px;
-    right: 60px;
-    z-index: 30;
-    transition: all .5s ease-in-out;
-  }
-
-.lines {
-        font-size: 35px;
-
-  }
-
-    .marc {
-      z-index: 30;
-      top: -10px;
-      right: -110px;
-      width: 65%;
+    .text {
+      display: flex;
       position: absolute;
+      top: 200px;
+      bottom: 300px;
+      left: 60px;
+      right: 60px;
+      z-index: 30;
+      transition: all .5s ease-in-out;
   }
 
-    .quote {
-      top: 370px;
+  .lines {
+    font-size: 35px;
+  }
 
-      &-glyph {
-        top: -105px;
-        font-size: 140px;
-      }
+  .marc {
+    z-index: 30;
+    top: -10px;
+    right: -110px;
+    width: 65%;
+    position: absolute;
+  }
 
-      &-text {
-        font-size: 150px;
-      }
+  .quote {
+    top: 370px;
+
+    &-glyph {
+      top: -105px;
+      font-size: 140px;
     }
 
-    .logo {
-      width:250px;
-      left: 80px;
-      bottom: 80px;
+    &-text {
+      font-size: 150px;
     }
+  }
+
+  .logo {
+    width:250px;
+    left: 80px;
+    bottom: 80px;
+  }
 
   .hashtag {
-    color: $orange;
-    bottom: 105px;
-    width: 245px;
-    left: 83px;
-    text-align: center;
-  }
+      bottom: 105px;
+      left: 83px;
+      text-align: center;
+    }
   }
 
 </style>

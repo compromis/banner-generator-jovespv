@@ -401,12 +401,6 @@ export default {
         align-content: center;
       }
 
-      &-item {
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-row-gap: 5px;
-      }
-
       &-name {
         grid-area: name;
         align-self: center;
@@ -441,6 +435,7 @@ export default {
     &.has-2-speakers {
       .speakers {
         &-item {
+          justify-self: center;
           --image-size: 90px;
         }
 
@@ -465,6 +460,7 @@ export default {
       }
 
         &-item {
+          justify-self: center;
           height: 150px;
           width: 110px;
           --image-size: 90px;
@@ -486,6 +482,7 @@ export default {
     &.has-4-speakers {
       .speakers {
         &-item {
+          justify-self: center;
           --image-size: 90px;
         }
 

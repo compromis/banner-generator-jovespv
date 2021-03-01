@@ -14,7 +14,7 @@
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="medium">
-      <div class="medium-overtitle" v-if="aspect === '11'">
+      <div class="medium-overtitle">
         <span>{{ banner.overtitle | formatString }}</span>
       </div>
       <div class="medium-title" :style="{fontSize: fontSize(banner.title, 60, 40, 30)}" v-if="aspect === '11'">
@@ -265,7 +265,7 @@ export default {
     .blob {
       &-1 {
         width: 365px;
-        height: 375px;
+        height: 422px;
         bottom: -40px;
         left: 20px;
       }
@@ -288,12 +288,16 @@ export default {
     .marc {
       display: none;
     }
+    .marc-2 {
+      height: 385px;
+    }
+
     .medium {
-      display: flex;
+      display: block;
       left: 75px;
-      top: 390px;
+      top: 352px;
       width: 258px;
-      height: 230px;
+      height: 145px;
       box-sizing: border-box;
       background: $white;
       z-index: 40;
@@ -301,15 +305,15 @@ export default {
       &-title {
         font-size: 15px;
         text-align: center;
-
       }
 
       &-subtitle {
         text-align: center;
         display: grid;
       }
+
       &-details {
-        padding-top: 0px;
+        padding-top: 20px;
         padding-left: 15px;
       }
 
@@ -319,13 +323,16 @@ export default {
       }
 
       &-time {
-      padding-top: 14px;
-    }
+        padding-top: 14px;
+      }
+
       &-day {
         padding-top: 0px;
       }
 
       &-title, &-subtitle, &-overtitle {
+        margin: 0;
+
         span {
           box-decoration-break: clone;
           -webkit-box-decoration-break: clone;
@@ -341,6 +348,8 @@ export default {
         span {
           background: $white;
           color: $gray-800;
+          width: 100%;
+          text-align: center;
         }
       }
 
@@ -353,7 +362,7 @@ export default {
     .logo {
       width:250px;
       left: 80px;
-      bottom: 40px;
+      bottom: 52px;
     }
   }
 </style>

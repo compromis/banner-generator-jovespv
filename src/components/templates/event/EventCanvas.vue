@@ -12,7 +12,9 @@
     <div class="blob blob-image">
       <img :src="banner.picturePreview" alt="Imatge" v-if="banner.picturePreview" :style="objectPosition" />
     </div>
-    <div class="blob blob-1"></div>
+    <div class="blob blob-1">
+      <div class="lgtb-gradient" v-if="color === 'lgtb'"></div>
+    </div>
     <div class="blob blob-2"></div>
     <div class="event">
       <div v-if="banner.title" class="event-title" :style="{fontSize: aspect === 'event' ? fontSize(banner.title, 75, 40, 60) : fontSize(banner.title, 45, 30, 60)}">
@@ -99,7 +101,7 @@ export default {
 
     &-title {
       font-size: 40px;
-      line-height: 1.1;
+      line-height: 1.2;
       color: $gray-900;
       letter-spacing: -1px;
       display: inline;
@@ -208,7 +210,7 @@ export default {
       }
 
     #marc2lgtb {
-      border-image: linear-gradient(135deg, rgba(109,35,127,1) 0%, rgba(48,87,161,1) 21%, rgba(9,128,55,1) 41%, rgba(248,231,32,1) 62%, rgba(239,134,26,1) 82%, rgba(224,14,24,1) 100%);
+      border-color: $gray-900;
       filter: drop-shadow(2px 2px 1px #e3e3e3);
     }
 
@@ -225,6 +227,27 @@ export default {
     #marc2green {
       border-color: #098037;
       filter: drop-shadow(2px 2px 1px #098037);
+    }
+
+    .lgtb-gradient {
+      left: 100px;
+      position: absolute;
+      bottom: 0;
+      height: 20px;
+      width: 400px;
+      background: linear-gradient(90deg,
+        rgba(239,64,77,1) 0%,
+        rgba(239,64,77,1) 16.6%,
+        rgba(247,146,38,1) 16.6%,
+        rgba(247,146,38,1) 33.2%,
+        rgba(255,209,15,1) 33.2%,
+        rgba(255,209,15,1) 49.8%,
+        rgba(127,195,71,1) 49.8%,
+        rgba(127,195,71,1) 66.4%,
+        rgba(85,164,219,1) 66.4%,
+        rgba(85,164,219,1) 83%,
+        rgba(161,74,156,1) 83%,
+        rgba(161,74,156,1) 100%);
     }
 
   .is-crowded {
@@ -273,7 +296,7 @@ export default {
   .aspect-916 {
     .marc2 {
       width: 330px;
-      top: 400px;
+      top: 345px;
       left: 35px;
       border-style: solid;
       z-index: 30;
@@ -286,7 +309,7 @@ export default {
     .blob {
       &-1 {
         width: 365px;
-        height: 375px;
+        height: 440px;
         bottom: -40px;
         left: 20px;
       }
@@ -306,8 +329,17 @@ export default {
       }
     }
 
+    .lgtb-gradient {
+      left: 0;
+      position: absolute;
+      bottom: 39px;
+      height: 20px;
+      width: 372px;
+      z-index: 100;
+    }
+
     .event {
-      top: 395px;
+      top: 330px;
       left: 40px;
       width: 100%;
       height: 240px;
@@ -336,7 +368,6 @@ export default {
           color: $gray-900;
           padding: 0 10px;
           border-radius: 2px;
-          background: $white;
           letter-spacing: -1px;
           box-decoration-break: clone;
           -webkit-box-decoration-break: clone;
@@ -344,12 +375,15 @@ export default {
       }
       &-details {
         align-content: center;
-        display: grid;
         padding-top: 5px;
 
         &--speakers {
           text-align: center;
           line-height: 1.1;
+        }
+
+        &-wrapper {
+          padding: 0;
         }
       }
     }
@@ -361,7 +395,7 @@ export default {
     .logo {
       width:250px;
       left: 80px;
-      bottom: 40px;
+      bottom: 70px;
     }
   }
 
