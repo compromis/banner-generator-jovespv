@@ -200,7 +200,7 @@ export default {
           'la Costera - la Canal de Navarrés',
           'la Safor - Valldigna',
           'la Vall d’Albaida',
-          'l’Alcoià - el Comtat - les Foies',
+          'l’Alcoià - el Comtat',
           'la Marina',
           'l’Alacantí',
           'el Vinalopó Mitjà - l’Alt Vinalopó',

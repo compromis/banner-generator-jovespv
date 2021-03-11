@@ -2025,7 +2025,7 @@
         c2.024,0,3.699-0.484,5.021-1.456c1.322-0.974,2.231-1.976,2.729-3.009C323.256,372.867,323.544,371.15,323.627,368.754z"/>
   </g>
 
-  <g v-if="logoStyle === 'l’Alcoià - el Comtat - les Foies'">
+  <g v-if="logoStyle === 'l’Alcoià - el Comtat'">
   <path fill="#FFFFFF" d="M0,228.036h3.8c9.812,0,12.818-4.595,12.818-12.818L16.514,99.83h21.522l0.104,125.835
       c0,13.604-9.18,22.469-23.581,22.469H0V228.036z M16.512,68.974h21.521v18.991H16.512V68.974z"/>
     <path fill="#FFFFFF" d="M46.742,142.559c0-26.744,17.884-45.103,43.2-45.103c25.799,0,43.36,18.676,43.36,45.103
@@ -3305,7 +3305,7 @@ export default {
           'la Costera - la Canal de Navarrés',
           'la Safor - Valldigna',
           'la Vall d’Albaida',
-          'l’Alcoià - el Comtat - les Foies',
+          'l’Alcoià - el Comtat',
           'la Marina Alta',
           'la Marina Baixa',
           'l’Alacantí',
