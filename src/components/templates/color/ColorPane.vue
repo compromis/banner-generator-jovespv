@@ -124,7 +124,8 @@ export default {
           'Algemesí',
           'Castelló de la Ribera',
           'Xàtiva',
-          'Xeraco - Xeresa'
+          'Xeraco - Xeresa',
+          'Xeresa - Xeraco'
         ],
         name: '',
         selected: 'Joves PV - Compromís'
