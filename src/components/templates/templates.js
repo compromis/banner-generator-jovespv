@@ -1,5 +1,17 @@
 export default [
   {
+    id: 'Avant',
+    name: 'AVANT',
+    aspects: ['11', '916'],
+    supports: ['multicolor-blobs'],
+    icon: 'forward',
+    components: {
+      pane: () => import(/* webpackChunkName: "Avant" */ './Avant/AvantPane'),
+      canvas: () => import(/* webpackChunkName: "Avant" */ './Avant/AvantCanva'),
+      help: () => import(/* webpackChunkName: "Avant" */ './Avant/AvantHelp')
+    }
+  },
+  {
     id: 'Color',
     name: 'Text Lliure',
     aspects: ['11', '916'],
