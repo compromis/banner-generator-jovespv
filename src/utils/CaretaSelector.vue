@@ -7,9 +7,9 @@
       <li :class="{'feminista' : true, 'active': value === 'feminista'}" @click="$emit('input', 'feminista')">
           <careta v-if="!isRounded" logo-style="feminista"></careta>
       </li>
-      <li :class="{'lgtb' : true, 'active': value === 'lgtb'}" @click="$emit('input', 'lgtb')">
+      <!--<li :class="{'lgtb' : true, 'active': value === 'lgtb'}" @click="$emit('input', 'lgtb')">
           <careta v-if="!isRounded" logo-style="lgtb"></careta>
-      </li>
+      </li>-->
             <li :class="{'red' : true, 'active': value === 'red'}" @click="$emit('input', 'red')">
           <careta v-if="!isRounded" logo-style="red"></careta>
       </li>
@@ -62,8 +62,8 @@ export default {
 
 .careta-selector {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: .5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: .8rem;
 
   li {
     border: .25rem solid $gray-200;

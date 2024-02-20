@@ -11,7 +11,6 @@ export default {
 
   props: {
     feminista: Boolean,
-    lgtb: Boolean,
     red: Boolean,
     green: Boolean,
     mono: Boolean,

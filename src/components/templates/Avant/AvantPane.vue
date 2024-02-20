@@ -1,12 +1,61 @@
 <template>
   <div :class="{ 'pane generic-pane': true, 'pane-dimmed': paneDimmed, 'pane-916': aspect === 1 }">
 
-    <b-field label="Contingut">
-      <vue-editor v-model="properties.text" :editor-toolbar="customToolbar" />
-    </b-field>
+      <!-- Text -->
+<transition name="slide">
+      <b-field label="Text">
+        <b-input
+          placeholder="la Ribera Alta"
+          @input="updateText"
+          :value="properties.text"
+          :maxlength="30">
+        </b-input>
+      </b-field>
+    </transition>
 
-    <!-- Emoji picker -->
-    <emoji-picker v-model="properties.emojis" />
+<!-- Edicio -->
+<transition name="slide">
+      <b-field label="Edicio">
+        <b-input
+          placeholder="V Congrés Comarcal"
+          @input="updateEdicio"
+          :value="properties.Edicio"
+          :maxlength="20">
+        </b-input>
+      </b-field>
+    </transition>
+
+<!-- Lloc -->
+<transition name="slide">
+      <b-field label="Lloc">
+        <b-input
+          placeholder="Centre Polifuncional Vilanova D'Alcolea"
+          @input="updateLloc"
+          :value="properties.Lloc"
+          :maxlength="50">
+        </b-input>
+      </b-field>
+    </transition>
+
+<!-- Date -->
+<transition name="slide">
+      <b-field label="Data" v-if="aspect !== 2">
+        <date-picker v-model="properties.date" />
+      </b-field>
+    </transition>
+
+<!-- Time -->
+<transition name="slide">
+      <b-field label="Hora" v-if="aspect !== 2">
+        <b-timepicker
+          rounded
+          inline
+          :increment-minutes="15"
+          v-model="properties.time"
+          icon="clock">
+        </b-timepicker>
+      </b-field>
+    </transition>
 
     <!-- Picture -->
     <picture-upload
@@ -15,6 +64,8 @@
       :errors="errors"
       @upload="updateImage"
       @delete="properties.picture = null; properties.picturePreview = null" />
+
+
 
     <!-- Picture position -->
     <b-field label="Posició de la imatge" class="range">
@@ -27,17 +78,8 @@
         @touchend="dimPane(false)" />
     </b-field>
 
-    <!-- Hashtag -->
-    <transition name="slide">
-      <b-field label="Hashtag">
-        <b-input
-          placeholder="#"
-          @input="updateHashtag"
-          :value="properties.hashtag"
-          :maxlength="20">
-        </b-input>
-      </b-field>
-    </transition>
+
+
 
     <!-- Local label
     <transition name="slide">
@@ -83,20 +125,25 @@
 <script>
 import { VueEditor } from 'vue2-editor'
 import PaneMixin from '@/mixins/pane-mixin.js'
-import EmojiPicker from '@/utils/EmojiPicker'
+import DatePicker from '@/utils/DatePicker'
+
 
 export default {
   name: 'text-pane',
 
   mixins: [PaneMixin],
 
-  components: { VueEditor, EmojiPicker },
+  components: { DatePicker,VueEditor},
 
   data () {
     return {
       properties: {
         text: '',
-        emojis: [],
+        Edicio:'',
+        Lloc:'',
+        date: new Date(),
+        time: new Date(),
+        picture:true,
         data: [
           'Joves PV - Compromís',
           'el Maestrat - els Ports',
@@ -140,7 +187,11 @@ export default {
       ]
     }
   },
-
+  created () {
+    // Set a default time
+    this.properties.time.setHours(10)
+    this.properties.time.setMinutes(0)
+  },
   computed: {
     filteredDataArray () {
       return this.properties.data.filter((option) => {
@@ -154,6 +205,15 @@ export default {
   methods: {
     validate () {
       this.pictureRequired()
+    },
+
+    handleInput() {
+      // Validar que solo se permitan números
+      let parsedNumber = parseInt(this.numberInput);
+      if (!isNaN(parsedNumber)) {
+        // Enviar el número al componente Canva.Vue
+        this.$emit('updateNumber', parsedNumber);
+      }
     }
   }
 }
