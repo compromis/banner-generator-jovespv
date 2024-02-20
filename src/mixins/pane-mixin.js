@@ -19,6 +19,8 @@ export default {
         picturePreview: '',
         picturePos: 50,
         hashtag: '',
+        Edicio: '',
+        Lloc:'',
         hasLocalLabel: false,
         localLabel: ''
       },
@@ -100,6 +102,15 @@ export default {
       }
     },
 
+    updateEdicio (Edicio) {
+      this.properties.Edicio = Edicio
+    },
+    updateText (text) {
+      this.properties.text = text
+    },
+    updateLloc (Lloc) {
+      this.properties.Lloc = Lloc
+    },
     dimPane (dimmed) {
       this.paneDimmed = dimmed
     },
