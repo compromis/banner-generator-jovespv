@@ -1,6 +1,8 @@
 <template>
   <div :class="{ 'pane generic-pane': true, 'pane-dimmed': paneDimmed, 'pane-916': aspect === 1 }">
 
+
+
       <!-- Text -->
 <transition name="slide">
       <b-field label="Text">
@@ -143,7 +145,6 @@ export default {
         Lloc:'',
         date: new Date(),
         time: new Date(),
-        picture:true,
         data: [
           'Joves PV - Compromís',
           'el Maestrat - els Ports',
@@ -205,15 +206,6 @@ export default {
   methods: {
     validate () {
       this.pictureRequired()
-    },
-
-    handleInput() {
-      // Validar que solo se permitan números
-      let parsedNumber = parseInt(this.numberInput);
-      if (!isNaN(parsedNumber)) {
-        // Enviar el número al componente Canva.Vue
-        this.$emit('updateNumber', parsedNumber);
-      }
     }
   }
 }
